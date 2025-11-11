@@ -122,4 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 4. KHỞI CHẠY ---
     imageUpload.addEventListener('change', handleImageUpload);
     loadImagesFromGoogleDrive();
+
+    function startMobileAutoplay() {
+        if (swiper && !swiper.autoplay.running) {
+            swiper.autoplay.start();
+        }
+    }
+    document.body.addEventListener('touchstart', startMobileAutoplay, { once: true });
+
 });
