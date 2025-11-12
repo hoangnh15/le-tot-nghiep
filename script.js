@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+    try {
+        // Lấy các tham số từ URL
+        const urlParams = new URLSearchParams(window.location.search);
 
+        // Lấy giá trị param 'name'
+        const guestName = urlParams.get('name'); 
+        const nameElement = document.getElementById('guest-name');
+        if (nameElement && guestName) {
+            nameElement.textContent = guestName; 
+        }
+
+    } catch (error) {
+        console.error("Lỗi khi xử lý tên khách mời:", error);
+    }
     // --- 1. CẤU HÌNH ---
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgsnPQpqadJNKjQAJbJTzEnha50qtG1r5zo_Ttq4wm9Jm3aO1FBtqeEY5DlJRaeS1u7A/exec";
 
@@ -129,5 +142,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     document.body.addEventListener('touchstart', startMobileAutoplay, { once: true });
+
+    const refreshBtn = document.getElementById('refresh-gallery-btn');
+    
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', reloadGallery); 
+    }
+    async function reloadGallery() {
+        refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang tải...';
+        refreshBtn.disabled = true; 
+
+        try {
+            swiper.removeAllSlides();
+            await loadImagesFromGoogleDrive(); 
+
+        } catch (error) {
+            console.error("Lỗi khi tải lại gallery:", error);
+            alert("Không thể tải lại ảnh, vui lòng thử lại.");
+        } finally {
+            refreshBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Tải lại ảnh mới';
+            refreshBtn.disabled = false; 
+        }
+    }
+
 
 });

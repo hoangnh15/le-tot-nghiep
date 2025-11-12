@@ -1,143 +1,181 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HuyHoang- Thư mời dự lễ tốt nghiệp</title>
-    
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuyHoang- Thư mời dự lễ tốt nghiệp</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <button id="hamburger-btn" class="hamburger-btn">
-        <i class="fas fa-bars"></i>
+  <button id="hamburger-btn" class="hamburger-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav id="sidebar-nav" class="sidebar-nav">
+    <button id="close-btn" class="close-btn">
+      <i class="fas fa-times"></i>
     </button>
-    <nav id="sidebar-nav" class="sidebar-nav">
-        <button id="close-btn" class="close-btn">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#welcome">Welcome!</a></li>
-            <li><a href="#schedule">Schedule of Events</a></li>
-            <li><a href="#social">Photography</a></li>
-            <li><a href="#location">Time & Location</a></li>
-        </ul>
-    </nav>
-   
-    <div id="overlay" class="overlay"></div>
-    
-    <div class="page-wrapper">
-        <header class="hero-section" id="home">
-            <div class="hero-content">
-                <h1>Thư mời dự lễ tốt nghiệp</h1>
-                <p style="color:darkgoldenrod"><strong>Trân trọng/Thân mời: </strong></p>
+    <ul class="nav-links">
+      <li><a href="#welcome">Welcome!</a></li>
+      <li><a href="#schedule">Schedule of Events</a></li>
+      <li><a href="#social">Photography</a></li>
+      <li><a href="#location">Time & Location</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div class="page-wrapper">
+    <header class="hero-section" id="home">
+      <div class="hero-content">
+        <h1>Thư mời dự lễ tốt nghiệp</h1>
+        <p style="color:darkgoldenrod; font-weight: bold;"><strong>Trân trọng/Thân mời: <br> <span id="guest-name" style="color:azure">Quý anh/chị/em/bạn</span></strong></p>
+      </div>
+      <a href="#contact" class="scroll-down"><i class="fa fa-caret-right" aria-hidden="true"></i> Contact me <i class="fa fa-caret-left" aria-hidden="true"></i></a>
+    </header>
+
+    <main>
+      <section id="welcome" class="content-section welcome-bg">
+        <div class="container">
+          <div class="section-header">
+            <i class="section-icon fas fa-door-open"></i>
+            <h2>Welcome!</h2>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vel nemo itaque quidem esse voluptatibus dolor ullam. Expedita quod, quae ipsa in ipsam fugit consequatur modi neque itaque aut nam.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, dolores atque reprehenderit tempora aspernatur rem similique cumque, officiis rerum, ipsam natus accusantium sed ratione? Fugit beatae illo expedita neque a?</p>
+        </div>
+      </section>
+
+      <section id="schedule" class="content-section schedule-bg">
+        <div class="container">
+          <div class="section-header">
+            <i class="section-icon fas fa-calendar-alt"></i>
+            <h2>Schedule of Events</h2>
+          </div>
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="schedule-content">
+                <h3>Gặp gỡ và chụp ảnh kỷ niệm cùng HuyHoang</h3>
+                <p>6h45 - 7h45 <br> Sân cờ trước Tòa A & E trường ĐHCNTT </p>
+              </div>
             </div>
-            <span class="scroll-down">Scroll Down</span>
-        </header>
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div class="schedule-content">
+                <h3>Lễ tốt nghiệp của Huy Hoàng diễn raaa</h3>
+                <p>8h00 - 11h15 <br> Tòa A trường ĐHCNTT</p>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="schedule-content">
+                <h3>Gặp gỡ và chụp ảnh kỷ niệm zới HuyHoang - Sau lễ </h3>
+                <p>11h15 - 12h15 <br> hội trường Tòa A trường ĐHCNTT</p>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="schedule-content">
+                <h3>Cảm ơn cả nhà iu của HuyHoang ạaaaa</h3>
+                <p>Hẹn gặp lại và mong đồng hành cùng anh/chị, các bạn và các em thân yêu trên chặng đường tiếp theo của HuyHoang ạ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <main>
-            <section id="welcome" class="content-section welcome-bg">
-                <div class="container">
-                    <i class="section-icon fas fa-door-open"></i>
-                    <h2>Welcome!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vel nemo itaque quidem esse voluptatibus dolor ullam. Expedita quod, quae ipsa in ipsam fugit consequatur modi neque itaque aut nam.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, dolores atque reprehenderit tempora aspernatur rem similique cumque, officiis rerum, ipsam natus accusantium sed ratione? Fugit beatae illo expedita neque a?</p>
-                </div>
-            </section>
+      <section id="social" class="content-section photo-bg">
+        <div class="container">
+          <div class="section-header">
+            <i class="section-icon fas fa-camera-retro"></i>
+            <h2>Chia sẻ khoảnh khắc</h2>
+          </div>
 
-            <section id="schedule" class="content-section schedule-bg">
-                <div class="container">
-                    <i class="section-icon fas fa-calendar-alt"></i>
-                    <h2>Schedule of Events</h2>
-                    <div class="schedule-list">
-                        <div class="schedule-item">
-                            <div class="schedule-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="schedule-content">
-                                <h3>Gặp gỡ và chụp ảnh kỷ niệm cùng HuyHoang</h3>
-                                <p>6h45 - 7h45</p>
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <div class="schedule-content">
-                                <h3>Lễ tốt nghiệp của Huy Hoàng diễn raaa</h3>
-                                <p>8h00 - 11h15</p>
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="schedule-content">
-                                <h3>Gặp gỡ và chụp ảnh kỷ niệm zới HuyHoang - Sau lễ </h3>
-                                <p>11h15 - 12h15</p>
-                            </div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="schedule-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="schedule-content">
-                                <h3>Cảm ơn cả nhà iu của HuyHoang ạaaaa</h3>
-                                <p>Hẹn gặp và mong đồng hành cùng anh/chị, các bạn và các em thân yêu của mình trên con đường tiếp theo của HuyHoang ạ.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section id="social" class="content-section photo-bg">
-                <div class="container">
-                    <i class="section-icon fas fa-camera-retro"></i>
-                    <h2>Chia sẻ khoảnh khắc</h2>
-                    
-                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
-                    <label for="image-upload" class="upload-label">
-                        <i class="fas fa-plus"></i> Thêm ảnh của bạn
-                    </label>
+          <input type="file" id="image-upload" accept="image/*" style="display: none;">
+          <label for="image-upload" class="upload-label">
+            <i class="fas fa-plus"></i> Thêm ảnh của bạn
+          </label>
 
-                    <p class="upload-note">nếu cóa hình ảnh nào kỷ niệm trong lễ tốt nghiệp này cùng HuyHoang thì mọi người mạnh dạng upload những chiếc ảnh xinh xắn ở bên dưới ạa !</p>
+          <p class="upload-note">nếu cóa hình ảnh nào kỷ niệm trong lễ tốt nghiệp này cùng HuyHoang thì mọi người mạnh dạng upload những chiếc ảnh xinh xắn ở bên dưới ạa !</p>
 
-                    <h3>Public library</h3>
-                    
-                    <div class="swiper-container gallery-swiper">
-                        <div class="swiper-wrapper" id="image-gallery-wrapper">
-                            </div>
-                        
-                       <!-- <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div> -->
-                    </div>
+          <h3 style="padding-bottom: 1.2rem; font-size:x-large;"><strong>Public library</strong></h3>
+          <button id="refresh-gallery-btn" class="refresh-btn">
+                <i class="fas fa-sync-alt"></i> Tải lại ảnh mới
+            </button>
+          <div class="swiper-container gallery-swiper">
+            <div class="swiper-wrapper" id="image-gallery-wrapper">
+            </div>
+          </div>
+          <div class="swiper-navigation-controls">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
 
-                </div>
-            </section>
+        </div>
+      </section>
 
-            <section id="location" class="content-section location-bg">
-                <div class="container">
-                    <i class="section-icon fas fa-map-marker-alt"></i>
-                    <h2>Địa điểm & Thời gian</h2>
-                    <p><strong>Cổng A, trường Đại học Công nghệ thông tin - ĐHQG TP.HCM</strong></p>
-                    <p><strong>6h45 - 7h45 hoặc 11h15 - 12h15, Thứ năm, Ngày 27 tháng 11</strong></p>
-                    
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.608478503499!2d106.80121698980477!3d10.86994447303225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527e7e8abb0eb%3A0xec43e4b99472c18a!2zVUlUIC0gQ-G7lW5nIEE!5e0!3m2!1svi!2s!4v1762881998191!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </section>
-        </main>
+      <section id="location" class="content-section location-bg">
+        <div class="container">
+          <div class="section-header">
+            <i class="section-icon fas fa-map-marker-alt"></i>
+            <h2>Địa điểm & Thời gian</h2>
+          </div>
 
-        <footer>
-            <p>From HuyHoang with <i class="fas fa-heart" style="color: #d9534f;"></i></p>
-        </footer>
-    </div> 
-    
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+          <p><strong>Cổng A, trường Đại học Công nghệ thông tin - ĐHQG TP.HCM</strong></p>
+          <p><strong>6h45 - 7h45 hoặc 11h15 - 12h15, Thứ năm, Ngày 27 tháng 11</strong></p>
+
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.608478503499!2d106.80121698980477!3d10.86994447303225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527e7e8abb0eb%3A0xec43e4b99472c18a!2zVUlUIC0gQ-G7lW5nIEE!5e0!3m2!1svi!2s!4v1762881998191!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="content-section contact-bg">
+        <div class="container">
+          <div class="section-header">
+            <i class="section-icon fas fa-paper-plane"></i>
+            <h2>Contact Me</h2>
+          </div>
+          <div class="contact-links">
+            <a href="tel:082 707 3745" class="contact-button phone">
+              <i class="fas fa-phone"></i> 0827073745
+            </a>
+            <a href="https://www.facebook.com/nghhoang155/" class="contact-button facebook">
+              <i class="fab fa-facebook-messenger"></i> Facebook
+            </a>
+            <a href="https://zalo.me/0827073745" class="contact-button zalo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo Logo" class="zalo-icon">
+              Nhắn tin Zalo
+            </a>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>From HuyHoang with <i class="fas fa-heart" style="color: #d9534f;"></i></p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
