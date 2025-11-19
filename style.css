@@ -9,7 +9,8 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+
+    font-family: 'Be Vietnam Pro', sans-serif; 
     line-height: 1.6;
     color: #333;
     background-color: #f0f0f0;
@@ -65,19 +66,98 @@ p {
     align-items: center; 
     margin-bottom: 1.5rem;
 }
+
+
 .hero-section {
-    height: 60vh;
-    min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+ 
+    height: auto; 
+    min-height: 0; 
+    overflow: hidden;
+}
+
+
+.hero-wrapper {
+    position: relative; 
+    width: 100%;
+    line-height: 0;
+}
+
+.hero-main-image {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+
+.guest-name-overlay {
+    position: absolute;
+    
+    top: 75.5%; 
+    transform: translateY(-50%);
+
+   
+    left: 0;
+    width: 100%;
+    
+    padding-left: 43%; 
+    text-align: left; 
+    margin-left: 0; 
+
+   
+    font-size: 3.5vw; 
+    
+
+    line-height: normal; 
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    color: #f24976; 
+    z-index: 10;
+    white-space: nowrap; 
+
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.2), 
+        0 0 5px rgba(255, 255, 255, 0.8); 
+    letter-spacing: 0.05em; 
+    padding-bottom: 2px; 
+}
+
+
+.hero-content, .scroll-down {
+    display: none;
+}
+
+
+
+.hero-content {
+    position: relative; 
+    z-index: 2; 
+    color: white; 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+.hero-content h1 {
+    font-family: 'Dancing Script', cursive; 
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .greeting-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+
+.scroll-down {
+    position: relative; 
+    z-index: 2;
     color: white;
-    position: relative;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero-content h1 {
@@ -398,6 +478,52 @@ p {
 .refresh-btn:hover i {
     transform: rotate(360deg);
 }
+/* === CSS CHO CHỈ DẪN CUỘN === */
+.scroll-hint {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 9999; 
+    text-align: center;
+    color: #514f4f; 
+    opacity: 0.9; 
+    transition: opacity 0.5s ease, visibility 0.5s ease; 
+    pointer-events: none; 
+}
+
+
+.scroll-hint.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-text {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
+}
+
+.scroll-arrow {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite; /* Hiệu ứng nảy */
+}
+
+/* Hiệu ứng nảy lên xuống */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
 /* Responsive cho Desktop */
 @media (min-width: 768px) {
     .contact-links {
@@ -445,6 +571,25 @@ footer {
     }
 
     .hero-section {
-        height: 70vh;
+        height: auto;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .guest-name-overlay {
+        font-size: 40px; 
+ 
+        padding-left: 500px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .guest-name-overlay {
+        font-size: 3.5vw; 
+        top: 76%; 
+        padding-left: 44%; 
     }
 }

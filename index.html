@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HuyHoang- Thư mời dự lễ tốt nghiệp</title>
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,12 +36,14 @@
   <div id="overlay" class="overlay"></div>
 
   <div class="page-wrapper">
-    <header class="hero-section" id="home">
-      <div class="hero-content">
-        <h1>Thư mời dự lễ tốt nghiệp</h1>
-        <p style="color:darkgoldenrod; font-weight: bold;"><strong>Trân trọng/Thân mời: <br> <span id="guest-name" style="color:azure">Quý anh/chị/em/bạn</span></strong></p>
-      </div>
-      <a href="#contact" class="scroll-down"><i class="fa fa-caret-right" aria-hidden="true"></i> Contact me <i class="fa fa-caret-left" aria-hidden="true"></i></a>
+   <header class="hero-section" id="home">
+        <div class="hero-wrapper">
+            <img src="assets/letter.jpg" alt="Thư mời Huy Hoàng" class="hero-main-image">
+            
+            <div class="guest-name-overlay">
+                <span id="guest-name" class="highlight-name">Quý khách mời</span>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -47,8 +53,8 @@
             <i class="section-icon fas fa-door-open"></i>
             <h2>Welcome!</h2>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vel nemo itaque quidem esse voluptatibus dolor ullam. Expedita quod, quae ipsa in ipsam fugit consequatur modi neque itaque aut nam.</p>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, dolores atque reprehenderit tempora aspernatur rem similique cumque, officiis rerum, ipsam natus accusantium sed ratione? Fugit beatae illo expedita neque a?</p>
+          <p>Hôm nay là một ngày vô cùng đặc biệt. Sau bao nỗ lực và cố gắng, cuối cùng HuyHoang cũng đã tốt nghiệp gòiii. Rất mong được đón tiếp và chia sẻ niềm vui này cùng tất cả mọi người tại khuôn viên trường, hội trường A trường ĐH Công nghệ Thông tin.</p>
+          <p>Cảm ơn tất cả anh chị em, bạn bè đã đến dự lễ tốt nghiệp của HuyHoang ạ <i class="fas fa-heart"  style="color: #d9534f;" > </i> </p>
         </div>
       </section>
 
@@ -64,7 +70,7 @@
                 <i class="fas fa-users"></i>
               </div>
               <div class="schedule-content">
-                <h3>Gặp gỡ và chụp ảnh kỷ niệm cùng HuyHoang</h3>
+                <h3>Gặp gỡ và chụp ảnh kỷ niệm cùng HuyHoang - trước khi lễ bắt đầu</h3>
                 <p>6h45 - 7h45 <br> Sân cờ trước Tòa A & E trường ĐHCNTT </p>
               </div>
             </div>
@@ -74,7 +80,7 @@
               </div>
               <div class="schedule-content">
                 <h3>Lễ tốt nghiệp của Huy Hoàng diễn raaa</h3>
-                <p>8h00 - 11h15 <br> Tòa A trường ĐHCNTT</p>
+                <p>8h00 ~ 11h00 <br> Tòa A trường ĐHCNTT</p>
               </div>
             </div>
             <div class="schedule-item">
@@ -83,7 +89,7 @@
               </div>
               <div class="schedule-content">
                 <h3>Gặp gỡ và chụp ảnh kỷ niệm zới HuyHoang - Sau lễ </h3>
-                <p>11h15 - 12h15 <br> hội trường Tòa A trường ĐHCNTT</p>
+                <p>11h00 - 12h15 <br> hội trường Tòa A trường ĐHCNTT</p>
               </div>
             </div>
             <div class="schedule-item">
@@ -176,6 +182,12 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 
-</body>
 
+</body>
+  <div id="scroll-indicator" class="scroll-hint">
+    <span class="scroll-text">Cuộn xuống</span>
+    <div class="scroll-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
 </html>

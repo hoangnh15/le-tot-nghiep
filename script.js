@@ -165,5 +165,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // --- XỬ LÝ ẨN/HIỆN CHỈ DẪN CUỘN ---
+    const scrollIndicator = document.getElementById('scroll-indicator');
 
+    window.addEventListener('scroll', function() {
+        // Nếu cuộn xuống quá 100px thì ẩn đi
+        if (window.scrollY > 100) {
+            scrollIndicator.classList.add('hidden');
+        } else {
+            // Nếu quay lại đầu trang thì hiện lại
+            scrollIndicator.classList.remove('hidden');
+        }
+    });
 });
