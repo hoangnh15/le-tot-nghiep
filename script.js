@@ -3,61 +3,67 @@ document.addEventListener('DOMContentLoaded', function() {
     // === CẤU HÌNH GOOGLE SHEET ===
     // Dán đường dẫn CSV bạn vừa copy ở Bước 1 vào đây:
     const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSlxRqFfzpic6mbN_VzhOx7Rg1TIvFr5xwH0CyPAPLauAWNaoDlo_TWlAgvG0EneuCBRFN88vvctQ0C/pub?gid=0&single=true&output=csv';
-
+    const MIN_LOADING_TIME = 1500;
     // Hàm đọc CSV và tìm tên
     async function fetchGuestName() {
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const guestCode = urlParams.get('name'); // Lấy mã từ ?name=... (ví dụ: 0x123)
+            const guestCode = urlParams.get('name'); 
             const nameElement = document.getElementById('guest-name');
 
-            if (!guestCode || !nameElement) return; // Nếu không có mã thì thôi
+            if (!guestCode || !nameElement) return; 
 
-            // 1. Tải dữ liệu từ Google Sheet
             const response = await fetch(SHEET_CSV_URL);
             const data = await response.text();
-
-            // 2. Phân tích dữ liệu CSV (Tách dòng)
             const rows = data.split('\n');
-
-            // 3. Tìm mã (Duyệt qua từng dòng)
             let foundName = "";
             
-            // Bắt đầu từ i=1 để bỏ qua dòng tiêu đề (Header)
             for (let i = 1; i < rows.length; i++) {
-                // Tách các cột bằng dấu phẩy
                 const row = rows[i];
                 const cols = row.split(','); 
-
-                // Cột A là cols[0] (Code), Cột B là cols[1] (Name)
-                // Dùng trim() để xóa khoảng trắng thừa & replace dấy ngoặc kép nếu có
                 if (cols.length >= 2) {
                     const currentCode = cols[0].trim();
-                    
                     if (currentCode === guestCode) {
-                        // Lấy tên ở cột B, xóa dấu ngoặc kép " nếu có
                         foundName = cols[1].replace(/^"|"$/g, '').trim();
-                        break; // Tìm thấy rồi thì dừng lại
+                        break; 
                     }
                 }
             }
 
-            // 4. Hiển thị tên lên web
             if (foundName) {
                 nameElement.textContent = foundName;
-            } else {
-                // Nếu nhập mã sai hoặc không tìm thấy
-                console.warn("Không tìm thấy mã: " + guestCode);
-                // Có thể để mặc định là "Quý khách mời" hoặc hiển thị gì đó tùy bạn
-            }
+            } 
 
         } catch (error) {
             console.error("Lỗi khi lấy tên khách mời:", error);
         }
     }
 
-    // Gọi hàm tìm tên ngay khi tải trang
-    fetchGuestName();
+    // === QUẢN LÝ MÀN HÌNH CHỜ (PRELOADER) ===
+    async function handlePreloader() {
+        const preloader = document.getElementById('preloader');
+        
+        // 1. Tạo một lời hứa: "Phải chờ ít nhất 2 giây"
+        const waitTimer = new Promise(resolve => setTimeout(resolve, MIN_LOADING_TIME));
+
+        // 2. Tạo một lời hứa: "Phải tải xong tên từ Google Sheet"
+        const dataFetcher = fetchGuestName();
+
+        // 3. Chờ cả 2 việc xong xuôi
+        await Promise.all([waitTimer, dataFetcher]);
+
+        // 4. Mọi thứ đã xong, ẩn màn hình chờ
+        if (preloader) {
+            preloader.classList.add('fade-out');
+            // Xóa hẳn khỏi DOM sau khi hiệu ứng mờ kết thúc (để không che nút bấm)
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800); 
+        }
+    }
+
+    // Gọi hàm quản lý preloader ngay lập tức
+    handlePreloader();
     // --- 1. CẤU HÌNH ---
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgsnPQpqadJNKjQAJbJTzEnha50qtG1r5zo_Ttq4wm9Jm3aO1FBtqeEY5DlJRaeS1u7A/exec";
 
@@ -222,4 +228,34 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollIndicator.classList.remove('hidden');
         }
     });
+
+    // --- XỬ LÝ CHUYỂN ĐỔI MAP (GOOGLE VS UIT) ---
+    const btnGoogle = document.getElementById('btn-google-map');
+    const btnUit = document.getElementById('btn-uit-map');
+    const mapGoogle = document.getElementById('map-google');
+    const mapUit = document.getElementById('map-uit');
+
+    if (btnGoogle && btnUit && mapGoogle && mapUit) {
+        
+
+        btnGoogle.addEventListener('click', function() {
+            // 1. Đổi trạng thái nút
+            btnGoogle.classList.add('active');
+            btnUit.classList.remove('active');
+            
+
+            mapGoogle.classList.remove('map-hidden');
+            mapUit.classList.add('map-hidden');
+        });
+
+       
+        btnUit.addEventListener('click', function() {
+
+            btnUit.classList.add('active');
+            btnGoogle.classList.remove('active');
+            
+            mapUit.classList.remove('map-hidden');
+            mapGoogle.classList.add('map-hidden');
+        });
+    }
 });

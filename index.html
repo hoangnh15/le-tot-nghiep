@@ -29,6 +29,10 @@
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="spinner"></div>
+    <p class="loading-text">Đang chuẩn bị thiệp mời...</p>
+  </div>
   <button id="hamburger-btn" class="hamburger-btn">
     <i class="fas fa-bars"></i>
   </button>
@@ -53,7 +57,7 @@
             <img src="assets/letter.jpg" alt="Thư mời Huy Hoàng" class="hero-main-image">
             
             <div class="guest-name-overlay">
-                <span id="guest-name" class="highlight-name">Quý khách mời</span>
+                <span id="guest-name" class="highlight-name">Quý anh/chị/em/bạn</span>
             </div>
         </div>
     </header>
@@ -148,18 +152,26 @@
         </div>
       </section>
 
-      <section id="location" class="content-section location-bg">
+     <section id="location" class="content-section location-bg">
         <div class="container">
           <div class="section-header">
             <i class="section-icon fas fa-map-marker-alt"></i>
             <h2>Địa điểm & Thời gian</h2>
           </div>
 
-          <p><strong>Cổng A, trường Đại học Công nghệ thông tin - ĐHQG TP.HCM</strong></p>
+          <p><strong>Hội trường A & Sân cờ trước tòa E, trường Đại học Công nghệ thông tin - ĐHQG TP.HCM</strong></p>
           <p><strong>6h45 - 7h45 hoặc 11h15 - 12h15, Thứ năm, Ngày 27 tháng 11</strong></p>
 
+          <div class="map-toggles">
+            <button id="btn-google-map" class="map-toggle-btn active">Google Map</button>
+            <span class="toggle-separator">|</span>
+            <button id="btn-uit-map" class="map-toggle-btn">Sơ đồ UIT</button>
+          </div>
+
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.608478503499!2d106.80121698980477!3d10.86994447303225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527e7e8abb0eb%3A0xec43e4b99472c18a!2zVUlUIC0gQ-G7lW5nIEE!5e0!3m2!1svi!2s!4v1762881998191!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe id="map-google" class="map-content" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.608478503499!2d106.80121698980477!3d10.86994447303225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527e7e8abb0eb%3A0xec43e4b99472c18a!2zVUlUIC0gQ-G7lW5nIEE!5e0!3m2!1svi!2s!4v1762881998191!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <img id="map-uit" class="map-content map-hidden" src="assets/uit_map.jpg" alt="Sơ đồ trường UIT">
           </div>
         </div>
       </section>
