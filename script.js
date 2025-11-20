@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // === CẤU HÌNH GOOGLE SHEET ===
-    // Dán đường dẫn CSV bạn vừa copy ở Bước 1 vào đây:
     const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSlxRqFfzpic6mbN_VzhOx7Rg1TIvFr5xwH0CyPAPLauAWNaoDlo_TWlAgvG0EneuCBRFN88vvctQ0C/pub?gid=0&single=true&output=csv';
     const MIN_LOADING_TIME = 1500;
     // Hàm đọc CSV và tìm tên
